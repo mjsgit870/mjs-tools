@@ -3,5 +3,13 @@ services:
     image: ghcr.io/mjsgit870/mjs-tools:${IMAGE_TAG:-latest}
     container_name: mjs-tools
     ports:
-      - "5173:80"
+      - "127.0.0.1:5173:80"
     restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    depends_on:
+      - web
