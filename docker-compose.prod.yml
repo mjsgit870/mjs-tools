@@ -1,0 +1,7 @@
+services:
+  web:
+    image: ghcr.io/mjsgit870/mjs-tools:${IMAGE_TAG:-latest}
+    container_name: mjs-tools
+    ports:
+      - "5173:80"
+    restart: unless-stopped
