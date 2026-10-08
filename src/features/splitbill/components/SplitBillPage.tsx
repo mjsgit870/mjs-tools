@@ -27,7 +27,7 @@ export function SplitBillPage() {
             Bagi tagihan bersama teman secara adil.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex w-full flex-wrap gap-2 sm:w-auto">
           <CopySummaryButton title={values.title} result={result} />
           <ShareImageButton title={values.title} result={result} />
           <Button type="button" variant="ghost" onClick={reset}>
